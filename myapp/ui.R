@@ -1,6 +1,6 @@
 fluidPage(
   # Application title
-  titlePanel("Word Cloud"),
+  titlePanel("Word Cloudzzzzz"),
   
   sidebarLayout(
     # Sidebar with a slider and selection inputs
