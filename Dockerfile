@@ -3,7 +3,6 @@ FROM r-base:latest
 MAINTAINER Winston Chang "winston@rstudio.com"
 
 RUN apt-get install -y \
-    sudo \
     gdebi-core \
     pandoc \
     pandoc-citeproc \
