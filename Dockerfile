@@ -2,6 +2,14 @@ FROM r-base:latest
 
 MAINTAINER Winston Chang "winston@rstudio.com"
 
+RUN apt-get install -y \
+    sudo \
+    gdebi-core \
+    pandoc \
+    pandoc-citeproc \
+    libcurl4-gnutls-dev \
+    libcairo2-dev \
+    libxt-dev
 
 # Download and install libssl 0.9.8
 RUN wget --no-verbose http://ftp.us.debian.org/debian/pool/main/o/openssl/libssl0.9.8_0.9.8o-4squeeze14_amd64.deb && \
@@ -23,6 +31,5 @@ EXPOSE 3838
 
 COPY shiny-server.sh /usr/bin/shiny-server.sh
 
-ENV LANG en_US.UTF-8
-
 CMD ["/usr/bin/shiny-server.sh"]
+
