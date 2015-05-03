@@ -1,24 +1,26 @@
-FROM rocker/r-base
+FROM rocker/shiny
 
-MAINTAINER "Petr Shevtsov" petr.shevtsov@gmail.com
+MAINTAINER "Lincoln Mullen" lincoln@lincolnmullen.com
+LABEL Description="A Shiny app to predict gender from first names"
 
-ENV DEBIAN-FRONTEND noninteractive
+RUN install2.r --error \
+    RColorBrewer \
+    devtools \
+    dplyr \
+    dygraphs \
+    shinythemes \
+    tidyr \
+    xts \
+&&  installGithub.r \
+    ropensci/gender \
+    ropensci/genderdata 
 
-RUN apt-get update && apt-get install -y \
-    sudo \
-    ca-certificates \
-&& wget -q http://ftp.us.debian.org/debian/pool/main/o/openssl/libssl0.9.8_0.9.8o-4squeeze14_amd64.deb \
-&& dpkg -i libssl0.9.8_0.9.8o-4squeeze14_amd64.deb && rm libssl0.9.8_0.9.8o-4squeeze14_amd64.deb \
-&& (ver=$(wget -qO- https://s3.amazonaws.com/rstudio-shiny-server-os-build/ubuntu-12.04/x86_64/VERSION) \
-&& wget https://s3.amazonaws.com/rstudio-shiny-server-os-build/ubuntu-12.04/x86_64/shiny-server-${ver}-amd64.deb -O shiny-server.deb \
-&& dpkg -i shiny-server.deb \
-&& rm shiny-server.deb)
+RUN rm -rf /tmp/downloaded_packages/ /tmp/*.rds 
+RUN rm -rf /srv/shiny-server/*
 
-RUN R -e "install.packages(c('shiny', 'rmarkdown'), repos='http://cran.rstudio.com/')"
-
-RUN cp -R /usr/local/lib/R/site-library/shiny/examples/* /srv/shiny-server/
+ADD *.R /srv/shiny-server/
+ADD www /srv/shiny-server/www
 
 EXPOSE 3838
 
-USER shiny
-CMD ["/usr/bin/shiny-server"]
+CMD ["/usr/bin/shiny-server.sh"]

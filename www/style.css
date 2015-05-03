@@ -1,0 +1,36 @@
+h3 {
+  margin-bottom: 4rem;
+}
+
+#user_percent_plot, #user_popularity_plot {
+  height: 300px!important;
+}
+
+#prediction {
+  margin: 40px 0;
+}
+
+a {
+  color: #f39c12;
+}
+
+.selectize-input {
+  /* border: 1px solid #dce4ec; */
+  overflow: visible;
+}
+
+#cf-header {
+  margin: 80px 0 20px 0;
+}
+
+#interesting-labels {
+  padding-top: 35px!important;
+}
+
+.shiny-input-container {
+  width: 100%!important;
+}
+
+.dygraph-title {
+  font-weight: normal;
+}
