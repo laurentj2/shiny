@@ -1,4 +1,4 @@
-FROM laurentj/shiny
+FROM r-base:latest
 
 MAINTAINER Winston Chang "winston@rstudio.com"
 
