@@ -2,7 +2,7 @@ FROM r-base:latest
 
 MAINTAINER Winston Chang "winston@rstudio.com"
 
-RUN apt-get install -y \
+RUN apt-get install -y wget \
     gdebi-core \
     pandoc \
     pandoc-citeproc \
