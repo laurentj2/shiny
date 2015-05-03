@@ -2,17 +2,6 @@ FROM laurentj/shiny
 
 MAINTAINER Winston Chang "winston@rstudio.com"
 
-RUN install2.r --error \
-    RColorBrewer \
-    devtools \
-    dplyr \
-    dygraphs \
-    shinythemes \
-    tidyr \
-    xts \
-&&  installGithub.r \
-    ropensci/gender \
-    ropensci/genderdata 
 
 # Download and install libssl 0.9.8
 RUN wget --no-verbose http://ftp.us.debian.org/debian/pool/main/o/openssl/libssl0.9.8_0.9.8o-4squeeze14_amd64.deb && \
