@@ -21,7 +21,7 @@ You can run the container at other ports. Sometimes there is already some servic
 To run the app at PORT 3838 for example, you can use:
 
 ```sh
-docker run --rm -p 3838:80 flaviobarros/shiny-worcloud
+docker run --rm -p 3838:80 laurentj/shiny
 ```
 
 ## Intented usage:
