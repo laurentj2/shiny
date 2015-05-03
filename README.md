@@ -12,8 +12,7 @@ The image is available from [Docker Hub](https://registry.hub.docker.com/u/flavi
 To run this Shiny App on your computer:
 
 ```sh
-docker run --rm -p 80:80 flaviobarros/shiny-worcloud
-```
+docker run --rm -p 80:80 laurentj/shiny```
 
 and it will avaliable at http://127.0.0.1/ ou http://localhost
 
