@@ -1,0 +1,79 @@
+.well {
+  padding: 8px;
+  margin-bottom: 5px;
+}
+
+.col-sm-4 {
+  max-width: 300px;
+}
+
+.nav-tabs {
+  margin-bottom: 10px;
+}
+
+.checkbox {
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+.form-group {
+  margin-top: 5px;
+  margin-bottom: 0px;
+}
+
+.radio-inline+.radio-inline, .checkbox-inline+.checkbox-inline {
+  margin-left: 0;
+}
+
+.radio-inline, .checkbox-inline {
+  margin-right: 10px;
+}
+
+th, td {
+  text-align: left;
+}
+
+table.dataTable tfoot td, table.dataTable thead td {
+  padding-top: 0px;
+  padding-bottom: 0px;
+  padding-left: 0px;
+  padding-right: 0px;
+}
+
+.modal-dialog {
+  width: 800px;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+pre {
+  /* overflow: auto; */
+  word-wrap: normal;
+  white-space: pre;
+}
+
+#data_filter, #tr_transform, #tr_recode, #tr_rename,
+#glm_predict_cmd, #reg_predict_cmd {
+  max-width: 234px;
+}
+
+.alignleft {
+  float: left;
+}
+
+.alignright {
+  float: right;
+}
+
+/*
+.navbar {
+  margin-bottom: 10px;
+}
+
+label {
+  margin-bottom: 5px;
+}
+*/
