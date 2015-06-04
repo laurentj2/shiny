@@ -4,8 +4,8 @@
 #------------------------------------------
 # Edit the following paths for your system:
 #------------------------------------------
-EUREQA_INCLUDE_PATH = /srv/shiny/eureqa_api_1_10_0/eureqa
-BOOST_INCLUDE_PATH = /usr/include/boost
+EUREQA_INCLUDE_PATH = /srv/shiny/eureqa_api_1_10_0/eureqa/
+BOOST_INCLUDE_PATH = /usr/include/boost/
 BOOST_LIBRARY_PATH = /usr/include/boost/stage/lib/
 
 basic_client: basic_client.o
