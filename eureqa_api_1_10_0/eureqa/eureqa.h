@@ -1,16 +1,10 @@
 #ifndef EUREQA_EUREQA_H
 #define EUREQA_EUREQA_H
 
-/*---------------------------------------------------------
-	Eureqa Open Source Header API: Includes API and Implementation
-
-	Advanced users may use the eureqa_api.h and erueqa_impl.h directly for
-	faster compilation times. See comments in eurequ_api.h
-*--------------------------------------------------------*/
-
-
-#define EUREQA_INLINE inline
-#include "eureqa_api.h"
-#include "eureqa_impl.h"
+#include <eureqa/data_set.h>
+#include <eureqa/connection.h>
+#include <eureqa/server_info.h>
+#include <eureqa/search_progress.h>
+#include <eureqa/search_options.h>
 
 #endif // EUREQA_EUREQA_H
