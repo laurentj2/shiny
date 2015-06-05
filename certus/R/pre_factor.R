@@ -2,8 +2,7 @@ library(quantmod)
 library(xts)
 test=round(runif(1),10)
 test=substring(test, 3,10)
-pre_factor <- reactive(function(){}
- 
+pre_factor <- 1
 
 plot.pre_factor <- reactive(function(){
   setwd("/srv/shiny")
