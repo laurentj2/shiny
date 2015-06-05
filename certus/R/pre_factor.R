@@ -1,6 +1,5 @@
 library(quantmod)
 library(xts)
-library(devtools)
 test=round(runif(1),10)
 test=substring(test, 3,10)
 plot.pre_factor <- reactive(function(){
