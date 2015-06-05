@@ -53,9 +53,9 @@ int main(int argc, char *argv[])
     // connect to a eureqa server
     eureqa::connection conn;
     std::cout << std::endl;
-    std::cout << "> Connecting to a eureqa server at 213.136.18.153" << std::endl;
+    std::cout << "> Connecting to a eureqa server at 127.0.0.1" << std::endl;
 
-    if (!conn.connect("213.136.18.153"))
+    if (!conn.connect("127.0.0.1"))
     {
         std::cout << "Unable to connect to server" << std::endl; 
 		std::cout << "Try running the eureqa_server binary provided with ";
