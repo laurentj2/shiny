@@ -50,9 +50,11 @@ int main(int argc, char *argv[])
     std::cout << data.summary() << std::endl;
     
     // initialize search options
-    eureqa::search_options options(argv[3]); // holds the search options
+    eureqa::search_options options("USOL=f(SPY,QQQ,IJH,IVV,XLB,XLE,XLF,XLI,USO,UUP,XLK,XLP,XLU,XLV,XLY,DBC,GLD,VXX)");
+
+//eureqa::search_options options(argv[3]); // holds the search options
 	
-	//options.search_relationship_ = argv[3];
+    //options.search_relationship_ = argv[3];
     //options.normalize_fitness_by_ = 10.0;
     //options.fitness_metric_ = eureqa::fitness_types::absolute_error;
     //options.solution_population_size_ = 100;
