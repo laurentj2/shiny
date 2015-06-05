@@ -50,7 +50,7 @@ int main(int argc, char *argv[])
     std::cout << data.summary() << std::endl;
     
     // initialize search options
-    eureqa::search_options options("USOL=f(SPY,QQQ,IJH,IVV,XLB,XLE,XLF,XLI,USO,UUP,XLK,XLP,XLU,XLV,XLY,DBC,GLD,VXX)");
+    eureqa::search_options options("USOL = f(SPY,QQQ,IJH,IVV,XLB,XLE,XLF,XLI,USO,UUP,XLK,XLP,XLU,XLV,XLY,DBC,GLD,VXX)");
 
 //eureqa::search_options options(argv[3]); // holds the search options
 	
