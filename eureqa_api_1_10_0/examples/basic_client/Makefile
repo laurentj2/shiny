@@ -6,7 +6,7 @@
 #------------------------------------------
 EUREQA_INCLUDE_PATH ?= /srv/shiny/eureqa_api_1_10_0/examples/
 BOOST_INCLUDE_PATH  ?= /boost_1_42_0/boost/
-BOOST_LIBRARY_PATH  ?= /boost_1_42_0/stage/lib/
+BOOST_LIBRARY_PATH  ?= /usr/lib/x86_64-linux-gnu/
 
 basic_client: basic_client.o
 	g++ basic_client.o \
