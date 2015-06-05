@@ -1,7 +1,7 @@
 
 library(quantmod)
-source("https://www.dropbox.com/s/3kksjgb122tgt15/original.r?dl=1")
-source("https://www.dropbox.com/s/j4cshlyclih2car/wrap.r?dl=1")
+source("http://www.dropbox.com/s/3kksjgb122tgt15/original.r?dl=1")
+source("http://www.dropbox.com/s/j4cshlyclih2car/wrap.r?dl=1")
 
 
 
