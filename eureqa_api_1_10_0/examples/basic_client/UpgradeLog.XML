@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type='text/xsl' href='_UpgradeReport_Files/UpgradeReport.xslt'?><UpgradeLog>
+<Properties><Property Name="Solution" Value="basic_client">
+</Property><Property Name="Solution File" Value="F:\eureqa_api_1_09_0\eureqa_api_1_09_0\examples\basic_client\basic_client.sln">
+</Property><Property Name="Date" Value="Friday, November 21, 2014">
+</Property><Property Name="Time" Value="15:03 PM">
+</Property></Properties><Event ErrorLevel="0" Project="basic_client" Source="basic_client.vcproj" Description="Converting project file 'F:\eureqa_api_1_09_0\eureqa_api_1_09_0\examples\basic_client\basic_client.vcproj'.">
+</Event><Event ErrorLevel="1" Project="basic_client" Source="basic_client.vcproj" Description="VCWebServiceProxyGeneratorTool is no longer supported. The tool has been removed from your project settings.">
+</Event><Event ErrorLevel="0" Project="basic_client" Source="basic_client.vcproj" Description="Done converting to new project file 'F:\eureqa_api_1_09_0\eureqa_api_1_09_0\examples\basic_client\basic_client.vcxproj'.">
+</Event><Event ErrorLevel="3" Project="basic_client" Source="basic_client.vcproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="" Source="basic_client.sln" Description="Solution converted successfully">
+</Event><Event ErrorLevel="3" Project="" Source="basic_client.sln" Description="Converted">
+</Event></UpgradeLog>

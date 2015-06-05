@@ -1,5 +1,10 @@
 #include <iostream>
 #include <time.h>
+#include <fstream>
+#include <cassert>
+
+using namespace std;
+
 
 #include <eureqa/eureqa.h>
 
@@ -33,7 +38,7 @@ int main(int argc, char *argv[])
     std::string error_msg; // error information during import
 
     // import data from a text file
-    if (!data.import_ascii("../data_sets/default_data.txt", error_msg))
+    if (!data.import_ascii(argv[1], error_msg))
     {
         std::cout << error_msg << std::endl;
         std::cout << "Unable to import this file" << std::endl;
@@ -45,11 +50,29 @@ int main(int argc, char *argv[])
     std::cout << data.summary() << std::endl;
     
     // initialize search options
-    eureqa::search_options options("y = f(x)"); // holds the search options
-    std::cout << std::endl;
+    eureqa::search_options options(argv[3]); // holds the search options
+	
+	//options.search_relationship_ = argv[3];
+    //options.normalize_fitness_by_ = 10.0;
+    //options.fitness_metric_ = eureqa::fitness_types::absolute_error;
+    //options.solution_population_size_ = 100;
+    //options.predictor_population_size_ = 10;
+    //options.trainer_population_size_ = 10;
+    //options.solution_crossover_probability_ = 0.5;
+    //options.solution_mutation_probability_ = 0.01;
+    //options.predictor_crossover_probability_ = 0.5;
+    //options.predictor_mutation_probability_ = 0.2;
+    //options.implicit_derivative_dependencies_ = "";
+
+	// search for a formula f that satisfies:
+  
+	std::cout << std::endl;
     std::cout << "> Setting the search options" << std::endl;
     std::cout << options.summary() << std::endl;
-    
+		
+	options.set_default_building_blocks();
+
+	
     // connect to a eureqa server
     eureqa::connection conn;
     std::cout << std::endl;
@@ -187,7 +210,13 @@ int main(int argc, char *argv[])
         std::cout << std::endl;
         std::cout << best_solutions.to_string() << std::endl;
         std::cout << std::endl;
-        
+		ofstream myfile (argv[2]);
+		if (myfile.is_open())
+        {
+        myfile << best_solutions.to_string() << std::endl;
+        myfile.close();
+        }
+
         // update every second
         sleep(1);
     }
