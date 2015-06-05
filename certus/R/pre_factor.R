@@ -24,7 +24,7 @@ plot.pre_factor <- reactive(function(){
         
         write.table(rtn, paste0("input", i,test,".txt"), quote =FALSE, row.names=FALSE)
         
-        command <- sprintf("basic_client.exe input%s%s.txt output%s%s.txt AAPL=f(GS,MSFT)", i,test, i,test)
+        command <- sprintf("./basic_client  input%s%s.txt output%s%s.txt AAPL", i, i)
         system(paste0(command), wait=FALSE) 
         
       }
