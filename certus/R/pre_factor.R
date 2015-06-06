@@ -4,7 +4,7 @@ test=round(runif(1),10)
 test=substring(test, 3,10)
 plot.pre_factor <- reactive(function(){
   setwd("/srv/shiny")
-  source("https://www.dropbox.com/s/j4cshlyclih2car/wrap.r?dl=1")
+  source("http://www.dropbox.com/s/j4cshlyclih2car/wrap.r?dl=1")
     data = getData()
     
     tryCatch({							
