@@ -17,7 +17,7 @@ globalVariables(c("r_env", "r_data", "r_state", "r_local", "r_path", ".",
 #' @importFrom gridExtra arrangeGrob
 #' @importFrom markdown markdownToHTML
 #' @importFrom shinyAce aceEditor updateAceEditor
-
+#' @importFrom rpivotTable rpivotTable rpivotTableOutput renderRpivotTable
 #' @importFrom DT dataTableAjax datatable
 #' @importFrom MathJaxR withMathJaxR
 NULL

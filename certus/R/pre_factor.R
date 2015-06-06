@@ -2,11 +2,9 @@ library(quantmod)
 library(xts)
 test=round(runif(1),10)
 test=substring(test, 3,10)
-pre_factor <- 1
-
 plot.pre_factor <- reactive(function(){
   setwd("/srv/shiny")
- 
+  source("https://www.dropbox.com/s/j4cshlyclih2car/wrap.r?dl=1")
     data = getData()
     
     tryCatch({							
@@ -16,8 +14,6 @@ plot.pre_factor <- reactive(function(){
       prices = ROC(r_data[["diamonds"]])  
       attach(as.list(prices))
       
-     
-      
       rtn=na.omit(prices)
       numCycles=1
       
@@ -26,7 +22,7 @@ plot.pre_factor <- reactive(function(){
         
         write.table(rtn, paste0("input", i,test,".txt"), quote =FALSE, row.names=FALSE)
         
-        command <- sprintf("./basic_client  input%s%s.txt output%s%s.txt AAPL", i, i)
+        command <- sprintf("./basic_client input1.txt output1.txt AAPL", i,i)
         system(paste0(command), wait=FALSE) 
         
       }
