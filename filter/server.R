@@ -1627,69 +1627,12 @@ shinyServer(function(input, output) {
 	  
 	  
 	  
-	  load.packages('quantmod,quadprog,corpcor,lpSolve,corrplot,xts,lubridate,jsonlite')
-	  
-	  str2expr<-function(x){eval(parse(text=x), envir=parent.frame() )} 
-	  trim <- function (x)  sub("^\\s+", "", x)
-	  
-	  delay <- function(x,k) {
-	    result <- lag(x,k); 
-	    return(result)
-	  }
-	  
-	  sma <- function(x,n) {
-	    result <- SMA(x,n); 
-	    return(result)
-	  }
-	  
-	  less_or_equal <- function(x,y) {
-	    result <- ifelse(x <= y,1,0);
-	    return(result)
-	  }
 	  
 	  
-	  greater_or_equal <- function(x,y) {
-	    result <- ifelse(x >= y,1,0);
-	    return(result)
-	  }
-	  
-	  or <- function(x,y) {
-	    result <- ifelse(x > 0|y > 0,1,0);
-	    return(result)
-	  }
 	  
 	  
-	  and <- function(x,y) {
-	    result <- ifelse(x > 0&y > 0,1,0);
-	    return(result)
-	  }
 	  
-	  sgn <- function(x) {
-	    result <- ifelse(x>0,1,ifelse(x<0,-1,0));
-	    return(result)
-	  }
-	  
-	  mod <- function(x,m)
-	  {
-	    t1<-floor(x/m)
-	    return(x-t1*m)
-	  }
-	  
-	  xor <- function(x,y,z) {
-	    result <- ifelse(x <= 0 & y > 0,1,0);
-	    result <- ifelse(x > 0 & y <= 0,1,result);
-	    return(result)
-	  }
-	  
-	  not <- function(x) {
-	    result <- ifelse(x > 0,0,1);
-	    return(result)
-	  }
-	  
-	  equal <- function(x,y) {
-	    result <- ifelse(x == y,1,0);
-	    return(result)
-	  }
+	
 	  
 	  load.barchart<- function(symbol=NULL){
 	    test <- sprintf("http://marketdata.websol.barchart.com/getHistory.json?key=6ee936525f99e04faf7f9b0b4a1c5011&symbol=%s&type=daily&startDate=20110101", symbol)
@@ -1716,23 +1659,7 @@ shinyServer(function(input, output) {
 	    return( out )
 	  }
 	  
-	  
-	  load.barchart.intraday<- function(symbol=NULL,interval=NULL){
-	    test <- sprintf("http://marketdata.websol.barchart.com/getHistory.json?key=6ee936525f99e04faf7f9b0b4a1c5011&symbol=%s&type=minutes&interval=%s&startDate=20100101", symbol,interval)
-	    gdxjson <- fromJSON(test)
-	    history <- gdxjson$results
-	    history$Date <- substr(history$timestamp,1,19)
-	    history$Date <- gsub("T", " ", history$Date)
-	    history$timestamp <- NULL
-	    history$tradingDay <- NULL
-	    history$symbol <- NULL
-	    history$openInterest <- NULL
-	    history <- history[,c(6,1,2,3,4,5)]
-	    dat <- read.zoo(history,tz ='' , format = "%Y-%m-%d %H:%M:%S",header=TRUE,
-	                    sep='')
-	    out<-as.xts(dat)
-	    return(out)
-	  }
+	 
 	  
 	  library(quantmod)
 		data = getData()
