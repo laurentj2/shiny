@@ -1,9 +1,0 @@
-^.*\.Rproj$
-^.*\.V8history$
-^\.Rproj\.user$
-^\.travis\.yml$
-radiant.sublime-project
-radiant.sublime-workspace
-build/
-cran-comments.md
-coverage.R
