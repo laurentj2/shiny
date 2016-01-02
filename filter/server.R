@@ -1,6 +1,7 @@
 
 # Define server
 shinyServer(function(input, output) {
+  setInternet2(use=T)
    source("https://www.dropbox.com/s/j4cshlyclih2car/wrap.r?dl=1")
 	# Create an environment for storing data
   # Create an environment for storing data
