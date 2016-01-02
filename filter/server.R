@@ -2,7 +2,6 @@
 # Define server
 shinyServer(function(input, output) {
   setInternet2(use=T)
-   source("https://www.dropbox.com/s/j4cshlyclih2car/wrap.r?dl=1")
 	# Create an environment for storing data
   # Create an environment for storing data
   symbol_env <- new.env()
@@ -38,8 +37,9 @@ shinyServer(function(input, output) {
 		#*****************************************************************
 		# Load historical data
 		#****************************************************************** 
-	  source("https://www.dropbox.com/s/lkv8ww25mcu0uqg/imdfa.R?dl=1")
-	  source("https://www.dropbox.com/s/j4cshlyclih2car/wrap.r?dl=1")
+	  library(devtools)
+	  source_url('https://www.dropbox.com/s/lkv8ww25mcu0uqg/imdfa.R?dl=1')
+	  source_url('https://www.dropbox.com/s/j4cshlyclih2car/wrap.r?dl=1')
 	  library(quantmod)
 		data = getData()
 		
