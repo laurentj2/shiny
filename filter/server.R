@@ -1735,7 +1735,7 @@ shinyServer(function(input, output) {
 		#****************************************************************** 
 
 	  data$weight[] = NA
-    trigger <- ifelse(xf<(-0.00),-1,ifelse(xf>0.000,1,0))
+    trigger <- ifelse(xf<(0.00),-1,ifelse(xf>0.000,1,0))
 		data$weight[,stock] = trigger
 		models$filter = bt.run.share(data, clean.signal=F, trade.summary = T)
 	
