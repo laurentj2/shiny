@@ -1691,10 +1691,10 @@ shinyServer(function(input, output) {
 	
 		
 	# Make table
-	makeSidebysideTable <- reactive(function() {
-		models = getBackTest()
-		plotbt.strategy.sidebyside(models, return.table=T, make.plot=F)
-	})
+	#makeSidebysideTable <- reactive(function() {
+	#	models = getBackTest()
+	#	plotbt.strategy.sidebyside(models, return.table=T, make.plot=F)
+	#})
 
 	# Make table
 	makeAnnualTable <- reactive(function() {
@@ -1703,15 +1703,15 @@ shinyServer(function(input, output) {
 	})
 	
 	# Make table
-	makeTradesTable <- reactive(function() {
-		models = getBackTest()
-		model = models[[1]]
-		
-		if (!is.null(model$trade.summary)) {
-			ntrades = min(20, nrow(model$trade.summary$trades))		
-			last(model$trade.summary$trades, ntrades)
-		}
-	})
+	#makeTradesTable <- reactive(function() {
+	#	models = getBackTest()
+	#	model = models[[1]]
+	#	
+	#	if (!is.null(model$trade.summary)) {
+	#		ntrades = min(20, nrow(model$trade.summary$trades))		
+	#		last(model$trade.summary$trades, ntrades)
+	#	}
+	#})
 		
 	# Generate a table
 	makefilterTable <- reactive(function() {
@@ -1734,7 +1734,7 @@ shinyServer(function(input, output) {
 		models$filter$weight2[input$oos1:test2] <- 3
 		highlight = which(models$filter$weight2 > 2)
 		plota.control$col.x.highlight = col.add.alpha('green',50)
-			plotbt(models, plotX = T, log = 'y', LeftMargin = 3, main = NULL,x.highlight = highlight)
+		plotbt(models, plotX = T, log = 'y', LeftMargin = 3, main = NULL,x.highlight = highlight)
 		
 		
 		#plotbt.custom.report.part1(models, x.highlight = models$filter$highlight)  
