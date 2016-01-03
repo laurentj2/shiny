@@ -66,29 +66,18 @@ shinyUI(pageWithSidebar(
 			),			
         
 			tabPanel("About",
-				p('This application demonstrates how to back-test using a direct filtering strategy','
-				The Market Filter strategy invests in stock while the stock price is above the
-				moving average and goes in cash otherwise. The periods where Market Filter strategy is
-				invested are highlighted with green.'
-				),
+				p('This application demonstrates how to back-test using a direct filtering approach. The resulting convolution filters can be exported and used in any (intraday) trading application.'),
 								
 				br(),
 				
-				strong('Author'), p('Michael Kapler', a('Systematic Investor Blog', href="http://systematicinvestor.wordpress.com", target="_blank")),
-				
-				br(),
-				
-				strong('Code'), p('Original source code for this application at',
-				a('GitHub', href='https://github.com/systematicinvestor/SIT/Shiny/market.filter')),
+				p('Backtesting framework based on the excellent Systematic Investor Toolbox (SIT)'),a('GitHub', href='https://github.com/systematicinvestor/SIT/'),
 				
 				br(),
 				
 				strong('References'),
 				p(HTML('<ul>'),
-        			HTML('<li>'),'The web application is built with the amazing', a("Shiny.", href="http://www.rstudio.com/shiny/", target="_blank"),HTML('</li>'),
-        			HTML('<li>'),a('SIR application by Samuel M. Jenness', href="http://glimmer.rstudio.com/smjenness/SIR/", target="_blank"),HTML('</li>'),
-        			HTML('<li>'),a('SIR application code by Samuel M. Jenness', href="https://github.com/smjenness/Shiny/tree/master/SIR", target="_blank"),HTML('</li>'),
-				HTML('</ul>'))
+        		HTML('<li>'),'The web application is built with', a("Shiny.", href="http://www.rstudio.com/shiny/", target="_blank"),HTML('</li>'),
+    				HTML('</ul>'))
 			)    
 		)
 	)
