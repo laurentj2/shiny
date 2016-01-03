@@ -1630,7 +1630,7 @@ shinyServer(function(input, output) {
 		### IDMFA paramters
 		###
 		ub<-as.double(input$ub)
-		lb<-as.double(input$lb)
+		lb<-15
 		cutoff<-pi/ub
 		Lag<-as.double(input$lag)
 		lin_expweight<-F
@@ -1639,7 +1639,7 @@ shinyServer(function(input, output) {
 		spec_obj<-spec_comp(len,x,d)
 		weight_func<-spec_obj$weight_func
 		K<-length(weight_func[,1])-1
-	  Gamma<-((0:K)<(K*ub))
+		Gamma<-((0:K)<K/ub)
 	  #Gamma<-((0:K)<K/ub)&((0:K)>K/lb)
 		L<-as.double(input$smaLen)
 		
@@ -1650,11 +1650,9 @@ shinyServer(function(input, output) {
 		lambda_cross<-0
 		i1<-F
 		i2<-F
-	
+		plots=F
+		i_mdfa_obj<-IMDFA_comp(Lag,K,L,lambda,weight_func,Gamma,expweight,cutoff,i1,i2,weight_constraint,lambda_cross,lambda_decay,lambda_smooth,x,plots,lin_expweight)
 		
-		plots=T
-	  i_mdfa_obj<-IMDFA_comp(Lag,K,L,lambda,weight_func,Gamma,expweight,cutoff,i1,i2,weight_constraint,lambda_cross,lambda_decay,lambda_smooth,x,plots,lin_expweight)
-	  
 	  b<-i_mdfa_obj$i_mdfa$b
    
 	  #prices$signal <- i_mdfa_obj$xff
