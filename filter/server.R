@@ -1639,8 +1639,8 @@ shinyServer(function(input, output) {
 		spec_obj<-spec_comp(len,x,d)
 		weight_func<-spec_obj$weight_func
 		K<-length(weight_func[,1])-1
-		#Gamma<-((0:K)<K/ub)
-	  Gamma<-((0:K)<K/ub)&((0:K)>K/lb)
+		Gamma<-((0:K)<K/ub)
+	  #Gamma<-((0:K)<K/ub)&((0:K)>K/lb)
 		L<-as.double(input$smaLen)
 		
 		lambda_smooth<-as.double(input$overfit)/10
