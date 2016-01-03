@@ -59,7 +59,7 @@ shinyUI(pageWithSidebar(
 				br(),
 				h4("Last 20 Trades"),
 				tableOutput("tradesTable"),				
-				downloadButton("downloadReport", "Download Backtest Report"),
+				#downloadButton("downloadReport", "Download Backtest Report"),
 				downloadButton("downloadData", "Download Filter"),
 				br(),
 				br()	

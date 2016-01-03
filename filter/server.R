@@ -1826,21 +1826,21 @@ shinyServer(function(input, output) {
     # Download
     #******************************************************************    
     # Download pdf report
-	output$downloadReport <- downloadHandler(
-    	filename = 'report.pdf',
-    	content = function(file) {
-    		pdf(file = file, width=8.5, height=11)
+#	output$downloadReport <- downloadHandler(
+    #	filename = 'report.pdf',
+   # 	content = function(file) {
+   # 		pdf(file = file, width=8.5, height=11)
       			
-    		models = getBackTest()
+   ## 		models = getBackTest()
     		
-    		plota.control$col.x.highlight = col.add.alpha('green',50)
-    		plotbt.custom.report(models, trade.summary = T, x.highlight = models$market.filter$highlight)
-				plota.add.copyright()
-      		
-		    dev.off()
-    	}
-	)	
-		
+    ##		plota.control$col.x.highlight = col.add.alpha('green',50)
+    #		plotbt.custom.report(models, trade.summary = T, x.highlight = models$market.filter$highlight)
+		#		plota.add.copyright()
+    #  		
+		#    dev.off()
+  ##  	}
+#	)	
+#		
 	 output$downloadData <- downloadHandler(
 	filename = function() {
 	  paste('filter-', Sys.Date(), '.csv', sep='')
