@@ -57,8 +57,8 @@ shinyUI(pageWithSidebar(
 				br(),
 				br(),
 				br(),
-				h4("Last 20 Trades"),
-				tableOutput("tradesTable"),				
+				#h4("Last 20 Trades"),
+				#tableOutput("tradesTable"),				
 				#downloadButton("downloadReport", "Download Backtest Report"),
 				downloadButton("downloadData", "Download Filter"),
 				br(),
@@ -66,10 +66,7 @@ shinyUI(pageWithSidebar(
 			),			
         
 			tabPanel("About",
-				p('This application demonstrates how to back-test a Market Filter strategy using ',
-				a("Shiny", href="http://www.rstudio.com/shiny/", target="_blank"), 'framework and',
-				a("Systematic Investor Toolbox", href="http://systematicinvestor.wordpress.com/systematic-investor-toolbox/", target="_blank"),
-				'.
+				p('This application demonstrates how to back-test using a direct filtering strategy','
 				The Market Filter strategy invests in stock while the stock price is above the
 				moving average and goes in cash otherwise. The periods where Market Filter strategy is
 				invested are highlighted with green.'
