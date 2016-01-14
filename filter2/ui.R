@@ -66,7 +66,7 @@ shinyUI(pageWithSidebar(
 			),			
         
 			tabPanel("About",
-				p('This application demonstrates how to back-test using a direct filtering approach. The resulting convolution filters can be exported and used in any (intraday) trading application.'),
+				p('This application demonstrates how to back-test using an optimal filtering approach. The resulting convolution filters can be exported and used in any (intraday) trading application.'),
 								
 				br(),
 				
